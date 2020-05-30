@@ -21,8 +21,8 @@ jobs:
       - name: Hello Actions
         uses: 2KAbhishek/GA-Hello@v1.0
         with:
-        # Who to greet
-        MY_NAME: john12345678
+          # Who to greet
+          MY_NAME: john12345678
     
     # This workflow contains a single job called "build"
   build:
