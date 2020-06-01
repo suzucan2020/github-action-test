@@ -12,13 +12,11 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build:
-    name: autopy-lot
+  echo-hello:
+    name: echo-hello
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: autopy-lot 
-        uses: deep5050/autopy-lot@master
+      - uses: docker://alpine:3.11
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN}}
-          output_dir: './autopy-lot/'
+          entrypoint: /bin/echo
+          args: Hello, World kokkkookokokk!!
