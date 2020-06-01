@@ -12,11 +12,14 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  echo-hello:
-    name: echo-hello
+  hello-jupyter:
+    name: hello-jupyter
     runs-on: ubuntu-latest
+    container:
+      image: jupyter/tensorflow-notebook
     steps:
-      - uses: docker://alpine:3.11
-        with:
-          entrypoint: /bin/echo
-          args: Hello, World kokkkookokokk!!
+      - name: apt-get
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends graphviz cmake 
+          apt-get clean && rm -rf /var/lib/apt/lists/*
