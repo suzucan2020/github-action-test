@@ -15,11 +15,6 @@ jobs:
   hello-jupyter:
     name: hello-jupyter
     runs-on: ubuntu-latest
-    container:
-      image: jupyter/tensorflow-notebook
-    steps:
-      - name: apt-get
-        run: |
-          apt-get update
-          apt-get install -y --no-install-recommends graphviz cmake 
-          apt-get clean && rm -rf /var/lib/apt/lists/*
+    runs:
+    using: 'docker'
+    image: 'Dockerfile'
